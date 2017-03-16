@@ -1,0 +1,1 @@
+$('#bootstrap-touch-slider').bsTouchSlider();

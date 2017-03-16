@@ -1,0 +1,40 @@
+body {
+	height:  888px;
+	background: url('../img/2.jpg');
+}
+h4 {
+	text-align: center;
+	line-height: center;
+}
+.col-md-2 {
+	height: 260px;
+	overflow:  hidden;
+}
+.col-md-2 .thumbnail img{
+	height:  140px;
+	width: 200px;
+}
+a {
+	color: rgba(6,6,6,6);
+	text-decoration:  none!important;
+	text-align: center;
+}
+.btn {
+	margin-left: 20px;
+}
+.navbar-brand {
+	color: green!important;
+	font-weight: bold;
+} 
+small {
+	color: rgb(6,6,6)!important;
+	font-weight: bold;
+} 
+.panel {
+	
+}
+.panel-heading {
+	background: url("../img/1.jpg");
+}
+
+

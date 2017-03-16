@@ -1,0 +1,39 @@
+extends ../layout2
+
+block content
+  link(href="/css/base.css" rel="stylesheet")
+  link(href="/css/sign.css" rel="stylesheet")
+  .container
+    .row
+      .col-md-5
+        form(method="POST", action="/user/signin")
+          .modal-body
+            .form-group
+                .page
+                  header#header
+                    hgrounp.blank
+                      h1
+                      |       
+                      h2
+                        h2
+                  |   
+                  section.demo
+                    .box
+                      form
+                        div 大侠来此
+                        |     
+                        .input_control
+                          input#inputName(type="text",name="user[name]",placeholder="大侠报上姓名")
+                          |         
+                          label(for="inputName")
+                        |         
+                        .input_control
+                          input#inputPassword(type="password",name="user[password]", placeholder="请输入您的密码")
+                          |         
+                          label(for="inputName")
+                        |     
+                        div
+                          button.btn(type="submit") 方丈阁
+                        |     
+                        p
+                          a(href="#") 忘记密码?

@@ -1,0 +1,84 @@
+extends ../layout2
+
+block content
+    #bootstrap-touch-slider.carousel.bs-slider.fade.control-round.indicators-line(data-ride="carousel", data-pause="hover", data-interval="5000")
+      // Indicators
+      ol.carousel-indicators
+        li.active(data-target="#bootstrap-touch-slider", data-slide-to="0")
+        |         
+        li(data-target="#bootstrap-touch-slider", data-slide-to="1")
+        |         
+        li(data-target="#bootstrap-touch-slider", data-slide-to="2")
+      // Wrapper For Slides
+      .carousel-inner(role="listbox")
+        // Third Slide
+        .item.active
+          // Slide Background
+          a(href="/index", target="_blank")
+            img.slide-image(src="/img/4.jpg", alt="仙剑奇侠传五")
+          |           
+          .bs-slider-overlay
+          |           
+          .container
+            .row
+              // Slide Text Layer
+              .slide-text.slide_style_left
+                h1(data-animation="animated zoomInRight") 心愿
+                |                 
+                p(data-animation="animated fadeInLeft") 一夕一绽一缕芳，一生一叹一痕沙。
+                |                 
+                a.btn.btn-default(href="/index", target="_blank", data-animation="animated fadeInLeft") 大侠到访
+                |                 
+                a.btn.btn-primary(href="/signup", target="_blank", data-animation="animated fadeInRight") 慕名求仙
+        // End of Slide
+        // Second Slide
+        .item
+          // Slide Background
+          img.slide-image(src="/img/2.jpg", alt="仙剑奇侠传五前")
+          |           
+          .bs-slider-overlay
+          // Slide Text Layer
+          .slide-text.slide_style_center
+            h1(data-animation="animated flipInX") 牵绊
+            |             
+            p(data-animation="animated lightSpeedIn") 在孤心中，你永远不会比夜叉族重要，但一定比孤的性命更重要。
+            |             
+            a.btn.btn-default(href="/index", target="_blank", data-animation="animated fadeInUp") 大侠到访
+            |             
+            a.btn.btn-primary(href="/signup", target="_blank", data-animation="animated fadeInDown") 慕名求仙
+        // End of Slide
+        // Third Slide
+        .item
+          // Slide Background
+          img.slide-image(src="/img/1.jpg", alt="仙剑奇侠传四")
+          |           
+          .bs-slider-overlay
+          // Slide Text Layer
+          .slide-text.slide_style_right
+            h1(data-animation="animated zoomInLeft") 寻仙
+            |             
+            p(data-animation="animated fadeInRight") 若挥袖作别，流云万千，可有人千万流连？若今昔一别，一别永年。苍山负雪，浮生尽歇。
+            |             
+            a.btn.btn-default(href="/index", target="_blank", data-animation="animated fadeInLeft") 大侠到访
+            |             
+            a.btn.btn-primary(href="/signup", target="_blank", data-animation="animated fadeInRight") 慕名求仙
+        // End of Slide
+      // End of Wrapper For Slides
+      // Left Control
+      a.left.carousel-control(href="#bootstrap-touch-slider", role="button", data-slide="prev")
+        span.fa.fa-angle-left(aria-hidden="true")
+        |         
+        span.sr-only Previous
+      // Right Control
+      a.right.carousel-control(href="#bootstrap-touch-slider", role="button", data-slide="next")
+        span.fa.fa-angle-right(aria-hidden="true")
+        |         
+        span.sr-only Next
+        audio(controls="controls", hidden="hidden", autoplay="autoplay", loop="loop")
+           source(src="audio/begin.mp3", type="audio/mpeg")
+    // End  bootstrap-touch-slider Slider
+    script(src="js/jquery-1.11.0.min.js" type="text/javascript")
+    script(src="js/bootstrap.min.js")
+    script(src="js/jquery.touchSwipe.min.js")
+    script(src="js/bootstrap-touch-slider.js")
+    script(src="js/begin.js")
