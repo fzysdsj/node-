@@ -2,13 +2,14 @@ doctype
 html
  head
    meta(charset="utf-8")
-   meta(charset="UTF-8")
-   meta(http-equiv="X-UA-Compatible", content="IE=edge,chrome=1")
+   meta(http-equiv="X-UA-Compatible", content="IE=edge,chrome=1") 
+   link(href="./img/fa.ico", rel="shortcut icon")
    title #{title}
    include ./includes/head
-   include ./includes/daohang
+   include ./includes/daohang 
+    
    body.demo-1.loading
      link(href="./css/style.css" rel="stylesheet")
-     link(href="./css/index.css" rel="stylesheet")
+     link(href="./css/index.css" rel="stylesheet") 
      include ./includes/header
      block content

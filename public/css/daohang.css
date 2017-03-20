@@ -1,4 +1,4 @@
-#loaction {z-index:9999999;position: fixed;left: 0;width: 110px;height: 480px;margin-left: 70px;bottom: 0;}#loaction ul {background: url(../img/daohang.png) no-repeat;width: 110px;padding: 60px 0 0 0;height: 480px;}
+#loaction {z-index:8888;position: fixed;left: 0;width: 110px;height: 480px;margin-left: 0;bottom: 0;}#loaction ul {background: url(../img/daohang.png) no-repeat;width: 110px;padding: 60px 0 0 0;height: 480px;}
 #loaction ul li  {width:110px ;height: 50px;list-style:none;}
 #loaction ul li a {display:block;width:110px ;height: 40px;} 
 #loaction ul li.denglu {height: 30px;} 

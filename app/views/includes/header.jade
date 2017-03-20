@@ -25,22 +25,27 @@ nav.navbar.navbar-inverse.navbar-static-top
     #navbar.collapse.navbar-collapse.sidebar-offcanvas
       ul.nav.navbar-nav
         li
-          a(href="/index") 仙剑人物
-        |     
-        li
+          a(href="/index") 仙剑人物 
+        li 
           a(href="/gushi") 仙剑廿载
         |     
         li
+          a(href="/") 凑数一号
+        |     
         li
-          a(href="#contact") 仙剑娱乐
-        li#logo
-          a(href="#contact") LOGO
         li
-          a(href="#contact") 仙剑经典
+          a(href="/yule") 仙剑娱乐
+        li#logo(style="width:220px;")
+          a(href="#contact" style="height:50px;")
+            img(src="/img/logo.png" style="position:absolute;top:-5px;left:-20px;")
         li
-          a(href="/signin") 仙剑留音
+          a(href="/jingdian") 仙剑经典 
+        li 
+          a(href="/") 凑数二号
         li
-          a(href="#contact") 关于方丈  
+          a(href="/liuyan") 檀越留言
+        li
+          a(href="/fangzhang") 方丈始末 
           script(src="/js/offcanvas.min.js")
         if user
           p.navbar-text.navbar-right
@@ -58,7 +63,7 @@ nav.navbar.navbar-inverse.navbar-static-top
             span.input-group-btn
               button.btn.btn-warning(type='submit') 搜索
   link(rel="stylesheet prefetch", href="/css/animate1.min.css")
-  link(rel="stylesheet", type="text/css", href="css/default.css")
+  //- link(rel="stylesheet", type="text/css", href="css/default.css")
   link(rel="stylesheet", type="text/css", href="/css/styles1.css")
   .htmleaf-container
           #ss_menu
