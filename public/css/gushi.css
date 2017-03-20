@@ -28,3 +28,4 @@ div#xian3w {width:100%;height:535px;background:url("../img/li5.jpg") no-repeat t
 div#xian4 {width:100%;height:623px;background:url("../img/li6.jpg") no-repeat top center;}
 div#xian5 {width:100%;height:545px;background:url("../img/li7.jpg") no-repeat top center;}
 div#xian5q {width:100%;height:573px;background:url("../img/li8.jpg") no-repeat top center;}
+#loaction ul li a:hover {background:url(../img/22.png);opacity: .5;} 
