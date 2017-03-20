@@ -1,7 +1,7 @@
 extends ../layout2
 
 block content
-    #bootstrap-touch-slider.carousel.bs-slider.fade.control-round.indicators-line(data-ride="carousel", data-pause="hover", data-interval="5000")
+    #bootstrap-touch-slider.carousel.bs-slider.fade.control-round.indicators-line(data-ride="carousel", data-pause="hover", data-interval="5000" href="/index")
       // Indicators
       ol.carousel-indicators
         li.active(data-target="#bootstrap-touch-slider", data-slide-to="0")
@@ -15,7 +15,7 @@ block content
         .item.active
           // Slide Background
           a(href="/index", target="_blank")
-            img.slide-image(src="/img/4.jpg", alt="仙剑奇侠传五")
+            img.slide-image(src="/img/b4.jpg", alt="仙剑奇侠传五")
           |           
           .bs-slider-overlay
           |           
@@ -34,7 +34,7 @@ block content
         // Second Slide
         .item
           // Slide Background
-          img.slide-image(src="/img/2.jpg", alt="仙剑奇侠传五前")
+          img.slide-image(src="/img/b2.jpg", alt="仙剑奇侠传五前")
           |           
           .bs-slider-overlay
           // Slide Text Layer
@@ -50,7 +50,7 @@ block content
         // Third Slide
         .item
           // Slide Background
-          img.slide-image(src="/img/1.jpg", alt="仙剑奇侠传四")
+          img.slide-image(src="/img/b1.jpg", alt="仙剑奇侠传四")
           |           
           .bs-slider-overlay
           // Slide Text Layer
@@ -74,7 +74,7 @@ block content
         span.fa.fa-angle-right(aria-hidden="true")
         |         
         span.sr-only Next
-        audio(controls="controls", hidden="hidden", autoplay="autoplay", loop="loop")
+        audio(controls="controls", hidden="hidden", autoplay="autoplay")
            source(src="audio/begin.mp3", type="audio/mpeg")
     // End  bootstrap-touch-slider Slider
     script(src="js/jquery-1.11.0.min.js" type="text/javascript")

@@ -9,5 +9,9 @@ block content
           .col-sm-10
             input#inputCategory.form-control(type="text", name="category[name]", value=category.name)
         .form-group
+          label.col-sm-2.control-label(for="inputCategory") 分类依据
+          .col-sm-10
+            textarea#inputCategory.form-control(type="text", name="category[reason]", value=category.reason)  
+        .form-group
           .col-sm-offset-2.col-sm-10
           button.btn.btn-default(type="submit") 录入

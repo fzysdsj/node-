@@ -8,6 +8,7 @@ block content
           tr
             th 名字
             th 时间
+            th 分类依据
             th 查看
             th 修改
             th 删除
@@ -16,8 +17,9 @@ block content
             tr(class="item-id-#{item._id}")
               td #{item.name}
               td #{moment(item.meta.updateAt).format('MM/DD/YYYY')}
+              td #{item.reason}
               td: a(target="_blank", href="/category/#{item._id}") 查看
-              td: a(target="_blank", href="/admin/categorylist/update/#{item._id}") 修改
+              td: a(target="_blank", href="/admin/category/update/#{item._id}") 修改
               td
                 button.btn.btn-danger.del(type="button", data-id="#{item._id}") 删除
   script(src="/js/admin.js")

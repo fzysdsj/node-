@@ -1,41 +1,92 @@
 .container
-  .row
-    .page-header.clearfix
-      h1= title
-      .col-md-4
-        small 仙剑人物录
-          //div.music(style="position:absolute;top:-41px;right:-370px;")
+      //- h1= title
+      //- .col-md-4
+      //-   small 仙剑人物录
+          div.music(style="position:absolute;top:-41px;right:-370px;")
             object(width="340", height="86", data="http://music.163.com/style/swf/widget.swf?sid=4873827&type=2&auto=0&width=320&height=66", type="application/x-shockwave-flash")
-      .col-md-8
-        form(method='GET', action='/results')
-          .input-group.col-sm-4.pull-right
-            input.form-control(type='text', name='q')
+      //- link(rel="stylesheet", href="/css/bootstrap.min.css")
+      link(rel="stylesheet", type="text/css", href="/css/default.css")
+      link(href="/css/offcanvas.min.css", rel="stylesheet", type="text/css")
+      .overlay
+nav.navbar.navbar-inverse.navbar-static-top
+  .container
+    .navbar-header
+      button.navbar-toggle.collapsed.pull-left(type="button", data-toggle="offcanvas")
+        span.sr-only Toggle navigation
+        |     
+        span.icon-bar
+        |     
+        span.icon-bar
+        |     
+        span.icon-bar
+      |     
+      a.navbar-brand(href="#")
+    |   
+    #navbar.collapse.navbar-collapse.sidebar-offcanvas
+      ul.nav.navbar-nav
+        li
+          a(href="/index") 仙剑人物
+        |     
+        li
+          a(href="/gushi") 仙剑廿载
+        |     
+        li
+        li
+          a(href="#contact") 仙剑娱乐
+        li#logo
+          a(href="#contact") LOGO
+        li
+          a(href="#contact") 仙剑经典
+        li
+          a(href="/signin") 仙剑留音
+        li
+          a(href="#contact") 关于方丈  
+          script(src="/js/offcanvas.min.js")
+        if user
+          p.navbar-text.navbar-right
+            span 欢迎您,#{user.name}
+            span &nbsp;|&nbsp;
+            a.navbar-link(href="/logout") 登出
+        else
+          p.navbar-text.navbar-right
+            a.navbar-link(href="#", data-toggle="modal", data-target="#signupModal") 注册
+            span &nbsp;|&nbsp;
+            a.navbar-link(href="#", data-toggle="modal", data-target="#signinModal") 登录 
+    form(method='GET', action='/results')
+            .input-group
+              input.form-control(type='text', name='q')
             span.input-group-btn
               button.btn.btn-warning(type='submit') 搜索
-.navbar.navbar-default.navbar-fixed-bottom
-  .container
-    a.navbar-brand(href="/" style="color: green;font-weight:bold;") 仙剑人物录
-    .navbar-header
-      ul.nav.nav-tabs
-        li.active
-          a(href="#") 首页
-        |         
-        li
-          a(href="#") 简介
-        |         
-        li.disabled
-          a(href="#") 信息
-        |     
-    if user
-      p.navbar-text.navbar-right
-        span 欢迎您,#{user.name}
-        span &nbsp;|&nbsp;
-        a.navbar-link(href="/logout") 登出
-    else
-      p.navbar-text.navbar-right
-        a.navbar-link(href="#", data-toggle="modal", data-target="#signupModal") 注册
-        span &nbsp;|&nbsp;
-        a.navbar-link(href="#", data-toggle="modal", data-target="#signinModal") 登录
+  link(rel="stylesheet prefetch", href="/css/animate1.min.css")
+  link(rel="stylesheet", type="text/css", href="css/default.css")
+  link(rel="stylesheet", type="text/css", href="/css/styles1.css")
+  .htmleaf-container
+          #ss_menu
+            div
+              i.fa.fa-qq
+              a(href="/") 
+                img(src="/img/boke.png")
+            |     
+            div
+              i.fa.fa-weibo
+                img(src="/img/github.png")
+            |     
+            div
+              i.fa.fa-weixin 
+                img(src="/img/qq.png")
+            |     
+            div
+              i.fa.fa-renren 
+                img(src="/img/weixin.png")
+            |     
+            .menu
+              #ss_toggle.share(data-rot="180")
+                .circle
+                |       
+                .bar
+                  script(src="/js/lianjie.js")
+
+
 #signupModal.modal.fade
   .modal-dialog
     .modal-content
@@ -47,7 +98,7 @@
             input#signupName.form-control(name="user[name]", type="text")
           .form-group
             label(for="signupPassword") 密码
-            input#signupPassword.form-control(name="user[password]", type="text")
+            input#signupPassword.form-control(name="user[password]", type="password")
         .modal-footer
           button.btn.btn-default(type="button", data-dismiss="modal") 关闭
           button.btn.btn-success(type="submit") 提交
@@ -62,7 +113,8 @@
             input#signinName.form-control(name="user[name]", type="text")
           .form-group
             label(for="signinPassword") 密码
-            input#signinPassword.form-control(name="user[password]", type="text")
+            input#signinPassword.form-control(name="user[password]", type="password")
         .modal-footer
           button.btn.btn-default(type="button", data-dismiss="modal") 关闭
           button.btn.btn-success(type="submit") 提交
+          script(type="text/javascript", src="/js/jquery-2.1.1.min.js")

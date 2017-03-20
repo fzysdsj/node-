@@ -1,0 +1,30 @@
+@charset "utf-8";
+*{margin:0;padding:0;list-style-type:none;}
+a,img{border:0;}
+body{font:12px/180% Arial, Helvetica, sans-serif, "新宋体";background:#ccc;}
+
+/* menu */
+ul.menu{width:540px;height:130px;overflow:hidden;margin:0 auto 0 auto;position:relative;}
+ul.menu li{float:left;width:39px;margin-right:50px;}
+ul.menu li a{text-decoration:none;width:39px;color:#333333;float:left;margin-right:50px;}
+ul.menu li a img{margin-top:15px;}
+ul.menu li span{width:39px;height:122px;background-size:100%;background-repeat:no-repeat;background-color:transparent;position:absolute;z-index:-1;top:182px;cursor:pointer;left:0px;}
+ul.menu li span.ipod_1{background-image:url(../img/gufeng.png);left:0;/*128/2 - 32(half of fengn) +1 of border*/}
+ul.menu li span.ipod_2{background-image:url(../img/gufeng.png);left:89px;/* plus 1feng+ 2px of border*/}
+ul.menu li span.ipod_3{background-image:url(../img/gufeng.png);left:178px;}
+ul.menu li span.ipod_4{background-image:url(../img/gufeng.png);left:266px;}
+ul.menu li span.ipod_5{background-image:url(../img/gufeng.png);left:356px;}
+ul.menu li span.ipod_6{background-image:url(../img/gufeng.png);left:446px;}
+img {width:38px;height:87px;opacity: .8;}
+#loaction {position: fixed;left: 50%;width: 110px;height: 477px;margin-left: 510px;bottom: 30px;}
+#loaction ul {background: url(../img/gun.png) no-repeat;width: 110px;padding: 30px 0 0 0;height: 447px;}
+#loaction ul li  {width:110px ;height: 45px;}
+#loaction ul li a {display:block;width:110px ;height: 45px;}
+div#banner2 {width:100%;height:556px;background:url("../img/li1.jpg") no-repeat top center;}
+div#xian1 {width:100%;height:614px;background:url("../img/li2.jpg") no-repeat top center;}
+div#xian2 {width:100%;height:542px;background:url("../img/li3.jpg") no-repeat top center;}
+div#xian3 {width:100%;height:536px;background:url("../img/li4.jpg") no-repeat top center;}
+div#xian3w {width:100%;height:535px;background:url("../img/li5.jpg") no-repeat top center;}
+div#xian4 {width:100%;height:623px;background:url("../img/li6.jpg") no-repeat top center;}
+div#xian5 {width:100%;height:545px;background:url("../img/li7.jpg") no-repeat top center;}
+div#xian5q {width:100%;height:573px;background:url("../img/li8.jpg") no-repeat top center;}

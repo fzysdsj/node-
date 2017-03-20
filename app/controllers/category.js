@@ -12,6 +12,19 @@ exports.new = function(req, res) {
     category: {}
   })
 }
+exports.update = function(req,res) {
+  var id = req.params.id;
+  if(id){
+
+    Category.findById(id,function(err,category) {
+      res.render('category_admin',{
+        title:"方丈阁  人物分类后台更新页",
+        category: category
+      })
+   
+    })
+  }
+}
 //分类信息更新
 // admin post movie
 exports.save = function(req, res) {

@@ -95,6 +95,7 @@ var UserSchema = new mongoose.Schema({
     type: String
   },
   password: String,
+  password2:String,
   // 0: nomal user
   // 1: verified user
   // 2: professonal user
@@ -118,8 +119,8 @@ var UserSchema = new mongoose.Schema({
 
 UserSchema.pre('save', function(next) {
   var user = this
-
   if (this.isNew) {
+    console.log(this.password)
     this.meta.createAt = this.meta.updateAt = Date.now()
   }
   else {
@@ -131,7 +132,6 @@ UserSchema.pre('save', function(next) {
 
     bcrypt.hash(user.password, salt, function(err, hash) {
       if (err) return next(err)
-
       user.password = hash
       next()
     })

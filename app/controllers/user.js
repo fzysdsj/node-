@@ -1,6 +1,26 @@
 var mongoose = require('mongoose')
 var User = require('../models/user');
 //
+exports.new = function(req, res) {
+  res.render('user_admin', {
+    title: '方丈阁 后台分类录入页',
+    user: {}
+  })
+}
+
+exports.update = function(req,res) {
+  var id = req.params.id;
+  if(id){
+
+    User.findById(id,function(err,user) {
+      res.render('user_admin',{
+        title:"方丈阁  用户信息后台更新页",
+        user: user
+      })
+   
+    })
+  }
+}
 exports.showSignup = function(req,res){
     res.render('signup',{
       title:'注册页面'
@@ -132,6 +152,18 @@ exports.del = function(req,res) {
     })
   }
 };
+exports.save = function(req, res) {
+  var _user = req.body.user
+  var user = new User(_user)
+
+  user.save(function(err, user) {
+    if (err) {
+      console.log(err)
+    }
+
+    res.redirect('/admin/user/list')
+  })
+}
 
 //用户分类更新页
 /*exports.update = function(req,res) {

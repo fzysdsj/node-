@@ -38,7 +38,7 @@ exports.update = function(req,res) {
     Movie.findById(id,function(err,movie) {
       Category.find({}, function(err, categories) {
       res.render('admin',{
-        title:"方丈阁  后台更新页",
+        title:"方丈阁  电影后台更新页",
         categories: categories,
         movie:movie
       })
@@ -94,7 +94,7 @@ exports.savePoster = function(req, res, next) {
   }
 }
 
-//admin post movie,电影保存
+//admin post movie,保存
 exports.save = function(req, res) {
   var id = req.body.movie._id
   var movieObj = req.body.movie

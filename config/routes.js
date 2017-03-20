@@ -4,6 +4,7 @@ var User = require('../app/controllers/user');
 var Comment = require('../app/controllers/comment')
 var Category = require('../app/controllers/category')
 var Begin = require('../app/controllers/begin')
+var Gushi = require('../app/controllers/gushi')
 var multipart = require('connect-multiparty');
 var multipartMiddleware = multipart();
 var _ = require('underscore');
@@ -17,6 +18,7 @@ app.use((req,res,next)=>{
 })
 //kaishi page
 app.get('/',Begin.begin)
+app.get('/gushi',Gushi.gushi)
 //index.page
 app.get('/index',Index.index);
 //user
@@ -33,13 +35,17 @@ app.get('/movie/:id',Movie.detail);
 app.get('/user/:id',user.detail);*/
 app.get('/admin/movie/new',/*User.signinRequired, User.adminRequired,*/Movie.new);
 app.get('/admin/movie/update/:id',/*User.signinRequired, User.adminRequired,*/Movie.update);
+app.get('/admin/category/update/:id',/*User.signinRequired, User.adminRequired,*/Category.update);
+app.get('/admin/user/update/:id',/*User.signinRequired, User.adminRequired,*/User.update);
 //有问题.
 app.post('/admin/movie',multipartMiddleware,Movie.savePoster,/*User.signinRequired, User.adminRequired,*/Movie.save);
 app.get('/admin/movie/list',/*User.signinRequired, User.adminRequired,*/Movie.list);
 app.delete('/admin/movie/list',/*User.signinRequired, User.adminRequired,*/Movie.del);
 app.post('/user/comment', /*User.signinRequired,*/ Comment.save);
 app.get('/admin/category/new', /*User.signinRequired, User.adminRequired,*/ Category.new)
+app.get('/admin/user/new', /*User.signinRequired, User.adminRequired,*/ User.new)
 app.post('/admin/category', /*User.signinRequired, User.adminRequired,*/ Category.save)
+app.post('/admin/user', /*User.signinRequired, User.adminRequired,*/ User.save)
 app.get('/admin/category/list', /*User.signinRequired, User.adminRequired,*/ Category.list)
 app.delete('/admin/category/list',/*User.signinRequired, User.adminRequired,*/Category.del);
 //results
