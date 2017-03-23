@@ -32,11 +32,11 @@ a {
 	right: 30px;
 
 
-}
-.navbar-right:hover {
+} 
+/* .navbar-right:hover {
 	background: #043947;
 	color:#fff !important;
-}
+} */
 .navbar-static-top {
 	margin-bottom:  126px;
 
@@ -61,7 +61,7 @@ form {
 	padding-left:0;
 }
 .navbar-brand {
-	background: #092531;
+	background: #fff;
 }
 .navbar-inverse .navbar-nav>li>a
 { 
@@ -75,3 +75,4 @@ form {
 #pic {
 	padding-left:  150px;
 }
+.navbar-fixed-bottom {height:20px;}

@@ -1,44 +1,34 @@
-extends ../layout2
+extends ../layout3
 
 block content
-  link(href="/css/base.css" rel="stylesheet")
-  link(href="/css/sign.css" rel="stylesheet")
   .container
+    link(href="/css/sign.css" rel="stylesheet")
+    #sign 
+     span 
+      img(src="/img/fa.png") 
+     span 用户注册 
+     span.xiaogushi 杜三贱可真是个了不起的人物，你说，他怎么能那么强呢，哎，你为啥走了。——方丈遗少杜三贱
     .row
       .col-md-5
         form(method="POST", action="/user/signup")
           .modal-body
             .form-group
-                .page
-                  header#header
-                    hgrounp.blank
-                      h1
-                      |       
-                      h2
-                        h2
-                  |   
-                  section.demo
-                    .box
-                      form
-                        div 来客登记
-                        |     
-                        .input_control
-                          input#inputName(type="text",name="user[name]",placeholder="请输入您的姓名")
-                          |         
-                          label(for="inputName")
-                        |     
-                        .input_control
-                          input#inputEmail(type="text", placeholder="请输入您的Email")
-                          |         
-                          label(for="inputName")
-                        |     
-                        .input_control
-                          input#inputPassword(type="password",name="user[password]", placeholder="请您认领一个秘钥")
-                          |         
-                          label(for="inputName")
-                        |     
-                        div
-                          button.btn(type="submit") 方丈阁
-                        |     
-                        p
-                          a(href="#") 秘钥丢了?
+              label(for="signupName") 用户名
+              input#signupName.form-control(name="user[name]", type="text")
+            .form-group
+              label(for="signupPassword") 密码
+              input#signupPassword.form-control(name="user[password]", type="password")
+          .modal-footer
+            button.btn.btn-default(type="reset", data-dismiss="modal") 重置
+            button.btn.btn-success(type="submit") 提交 
+   .col-md-4  
+     span#xian4
+      img(src="img/b2.jpg") 
+    span.xiaogushi 在仙剑五前传中，夏侯瑾轩和暇的云来石最后给了仙剑六中的谁？<br/>
+     span.xiaogushi   A.顾叔 <br/>
+     span.xiaogushi   B.越今朝 <br/>
+     span.xiaogushi   C.赢旭危 <br/>
+     span.xiaogushi   D.杜三贱 <br/>
+  script(src="js/sign.js")
+
+

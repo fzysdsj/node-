@@ -102,18 +102,21 @@ exports.save = function(req, res) {
 
   if (req.poster) {
     movieObj.poster = req.poster
+    console.log("我是谁？")
   }
 
   if (id) {
     Movie.findById(id, function(err, movie) {
       if (err) {
         console.log(err)
+        console.log("我是错误信息")
       }
 
       _movie = _.extend(movie, movieObj)
       _movie.save(function(err, movie) {
         if (err) {
           console.log(err)
+          console.log("我是保存时的错误信息");
         }
 
         res.redirect('/movie/' + movie._id)

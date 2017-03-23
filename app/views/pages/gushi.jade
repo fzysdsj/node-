@@ -1,7 +1,7 @@
 extends ../layout3
 
-block content
- #banner
+block content 
+ #banner.container
   ul#menu.menu
    li
     span.ipod_1
@@ -33,8 +33,8 @@ block content
    | 	
    li
     span.ipod_6
-    a(href="http://sc.chinaz.com/")
-      img(src="img/6.png" title="关于方丈")
+    a(href="/fangzhang")
+      img(src="img/6.png" title="方丈始末")
  #loaction 
    ul 
     li 
@@ -50,7 +50,11 @@ block content
     li 
      a(href="#xian5") 
     li 
-     a(href="#xian5q") 
+     a(href="#xian5q")  
+    li 
+     a(href="#xian6") 
+    li 
+     a(href="#banner")
  #banner2
  #xian1 
    .left1 
@@ -144,7 +148,19 @@ block content
      div 方丈阁荣誉称号：以力服人，以情动人。
      p 方丈点评：自认为，仙剑五前可以排在仙剑系列前三，仙一仙四前二随便。仙五前的游戏逻辑性更强了，人物也更有血性了。界面的优化上也做到了十分的努力。贫僧以为，其中最值得看的，其实是龙溟和凌波的爱情，傲骨无奈，柔情决绝。堪称悲绝之响。其次不得不说的就是谢沧行，他是我见到以后就不会再爱酒剑仙的大叔。
      p 评分等级：★★★★☆ 
- #xian6
+ #xian6 
+    .left2 
+     span 《仙剑奇侠传五》
+    .right2 
+     span 仙剑奇侠传三外传
+     div  发行日期：2011年07月07日
+     p (同年四月，杜三贱同学失恋。九月，考入正定大帝国一中，离家远行，至今不返)
+     div 创作团队：软星科技（北京）有限公司
+     div 主要角色：姜云凡，唐雨柔，龙幽，小蛮
+     div 游戏主题：心愿
+     div 方丈阁荣誉称号：姚郎才尽，骨气全无。
+     p 方丈点评：其实，仙五并没有太差，中规中矩。可能是因为之前仙四做的太好，而人们对北软的期待比之上软过无不及。然而仙五还未上市时，人们却都已经纷纷吐槽姚仙才气全无了。对于贫僧而言，北软的仙剑风格确实有些接受不了。
+     p 评分等级：★★★☆  
       
     script(src="/js/jquery-1.11.0.min.js")
     script(src="/js/gushi.js") 	

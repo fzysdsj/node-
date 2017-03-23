@@ -20,7 +20,6 @@ nav.navbar.navbar-inverse.navbar-static-top
         |     
         span.icon-bar
       |     
-      a.navbar-brand(href="#")
     |   
     #navbar.collapse.navbar-collapse.sidebar-offcanvas
       ul.nav.navbar-nav
@@ -36,7 +35,7 @@ nav.navbar.navbar-inverse.navbar-static-top
         li
           a(href="/yule") 仙剑娱乐
         li#logo(style="width:220px;")
-          a(href="#contact" style="height:50px;")
+          a(href="/fangzhang" style="height:50px;")
             img(src="/img/logo.png" style="position:absolute;top:-5px;left:-20px;")
         li
           a(href="/jingdian") 仙剑经典 
@@ -47,23 +46,13 @@ nav.navbar.navbar-inverse.navbar-static-top
         li
           a(href="/fangzhang") 方丈始末 
           script(src="/js/offcanvas.min.js")
-        if user
-          p.navbar-text.navbar-right
-            span 欢迎您,#{user.name}
-            span &nbsp;|&nbsp;
-            a.navbar-link(href="/logout") 登出
-        else
-          p.navbar-text.navbar-right
-            a.navbar-link(href="#", data-toggle="modal", data-target="#signupModal") 注册
-            span &nbsp;|&nbsp;
-            a.navbar-link(href="#", data-toggle="modal", data-target="#signinModal") 登录 
+ 
     form(method='GET', action='/results')
             .input-group
               input.form-control(type='text', name='q')
             span.input-group-btn
               button.btn.btn-warning(type='submit') 搜索
   link(rel="stylesheet prefetch", href="/css/animate1.min.css")
-  //- link(rel="stylesheet", type="text/css", href="css/default.css")
   link(rel="stylesheet", type="text/css", href="/css/styles1.css")
   .htmleaf-container
           #ss_menu
@@ -90,8 +79,23 @@ nav.navbar.navbar-inverse.navbar-static-top
                 |       
                 .bar
                   script(src="/js/lianjie.js")
-
-
+.navbar.navbar-default.navbar-fixed-bottom
+  .container
+      .navbar-brand 方丈阁仙剑人物录
+      .navbar-brand 
+        small 少有凌云气，舞剑惊紫微。一衣犹带水，猿啸掩柴扉。——方丈遗少杜三贱，丁酉春，二月廿二。
+   if user
+      p.navbar-text.navbar-right
+        span 欢迎您,#{user.name}
+        span &nbsp;|&nbsp;
+        a.navbar-link(href="/logout") 登出
+        span &nbsp;|&nbsp;
+        a.navbar-link(href="/logout") 完善信息
+    else
+      p.navbar-text.navbar-right
+        a.navbar-link(href="#", data-toggle="modal", data-target="#signupModal") 注册
+        span &nbsp;|&nbsp;
+        a.navbar-link(href="#", data-toggle="modal", data-target="#signinModal") 登录
 #signupModal.modal.fade
   .modal-dialog
     .modal-content
@@ -122,4 +126,5 @@ nav.navbar.navbar-inverse.navbar-static-top
         .modal-footer
           button.btn.btn-default(type="button", data-dismiss="modal") 关闭
           button.btn.btn-success(type="submit") 提交
-          script(type="text/javascript", src="/js/jquery-2.1.1.min.js")
+
+        script(type="text/javascript", src="/js/jquery-2.1.1.min.js")

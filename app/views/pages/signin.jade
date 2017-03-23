@@ -1,39 +1,32 @@
-extends ../layout2
+extends ../layout3
 
-block content
-  link(href="/css/base.css" rel="stylesheet")
-  link(href="/css/sign.css" rel="stylesheet")
+block content 
   .container
+    link(href="/css/sign.css" rel="stylesheet")
+    #sign 
+     span 
+      img(src="/img/fa.png") 
+     span 用户登陆 
+     span.xiaogushi  告诉你个小秘密，浏览本网站的最佳分辨率是1366*768 ————何龙溪
     .row
       .col-md-5
         form(method="POST", action="/user/signin")
           .modal-body
             .form-group
-                .page
-                  header#header
-                    hgrounp.blank
-                      h1
-                      |       
-                      h2
-                        h2
-                  |   
-                  section.demo
-                    .box
-                      form
-                        div 大侠来此
-                        |     
-                        .input_control
-                          input#inputName(type="text",name="user[name]",placeholder="大侠报上姓名")
-                          |         
-                          label(for="inputName")
-                        |         
-                        .input_control
-                          input#inputPassword(type="password",name="user[password]", placeholder="请输入您的密码")
-                          |         
-                          label(for="inputName")
-                        |     
-                        div
-                          button.btn(type="submit") 方丈阁
-                        |     
-                        p
-                          a(href="#") 忘记密码?
+              label#demo(for="signinName") 用户名
+              input#signinName.form-control(name="user[name]", type="text")
+            .form-group
+              label(for="signinPassword") 密码
+              input#signinPassword.form-control(name="user[password]", type="password")
+          .modal-footer
+            button.btn.btn-default(type="reset", data-dismiss="modal") 重置
+            button.btn.btn-success(type="submit") 提交
+   .col-md-4  
+     span#xian4
+      img(src="img/b1.jpg") 
+    span.xiaogushi 在仙剑奇侠传四的结尾，曾有梦璃在菱纱墓前悲伤地抚摸望舒剑的一幕，那么，菱纱到底死了没死？<br/>
+     span.xiaogushi  A.死了<br/>
+     span.xiaogushi  B.没死<br/>
+     span.xiaogushi  C.不清楚 <br/>
+     span.xiaogushi  D.杜三贱晓得<br/>
+
