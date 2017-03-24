@@ -1,3 +1,9 @@
-.xiaogushi{margin-left: 20px;font-size: 15px;}
+@charset "utf-8";
+*{margin:0;padding:0;list-style-type:none;}
+a,img{border:0;}
+body{font:12px/180% Arial, Helvetica, sans-serif, "新宋体";background:#ccc;}
+.xiaogushi{margin-left: 20px;font-size: 15px;color:#000;}
 #xian4 {margin-left: 30px}
 #xian4 img{width:400px; height: 300px;}
+span {color:white;font: 26px/36px "楷体";}
+#sign img {width: 100px; height: 100px;}

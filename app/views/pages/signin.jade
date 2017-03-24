@@ -1,11 +1,12 @@
-extends ../layout3
+extends ../layout_sign
 
 block content 
   .container
     link(href="/css/sign.css" rel="stylesheet")
     #sign 
-     span 
-      img(src="/img/fa.png") 
+     span  
+      a(href="/fangzhang")  
+       img(src="/img/fa.png") 
      span 用户登陆 
      span.xiaogushi  告诉你个小秘密，浏览本网站的最佳分辨率是1366*768 ————何龙溪
     .row
@@ -29,4 +30,4 @@ block content
      span.xiaogushi  B.没死<br/>
      span.xiaogushi  C.不清楚 <br/>
      span.xiaogushi  D.杜三贱晓得<br/>
-
+  script(src="js/sign.js")
