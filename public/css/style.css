@@ -1,7 +1,6 @@
 @charset "utf-8";
 body {
 	height:  888px;
-	
 }
 h4 {
 	text-align: center;
@@ -38,27 +37,16 @@ a {
 	color:#fff !important;
 } */
 .navbar-static-top {
-	margin-bottom:  126px;
-
 	background:#092531 ;
 	/* url("../img/cj_8d.jpg") */
 }
-form {
-	position: relative;
+#search {
+	float: left;
+	padding-top: 10px;
+	width: 150px;
 }
-.input-group {
-	position: absolute;
-	top: 71px;
-	/* right: 118px; */
-	left:-14px;
-	overflow: hidden;
-}
-.input-group-btn {
-	position: absolute;
-	top: 70px;
-	/* right: 109px; */
-	left:180px;
-	padding-left:0;
+#search form {
+	width: 150px !important;
 }
 .navbar-brand {
 	background: #fff;
@@ -76,3 +64,4 @@ form {
 	padding-left:  150px;
 }
 .navbar-fixed-bottom {height:20px;}
+#bottomlogo {background: url("../img/fa.png") bottom right;}

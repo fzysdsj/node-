@@ -18,15 +18,16 @@ block content
                         img(src="/upload/#{item.poster}", alt="#{item.title}")
                   .caption
                     h4 #{item.title}
-                    p: a.btn.btn-primary(href="/movie/#{item._id}", role="button") 人物介绍
-      ul.pagination
+                    p: a.btn.btn-primary.rwjs(href="/movie/#{item._id}", role="button") 人物介绍
+      ul.pagination(style="margin-left:50%;margin-bottom:20%;")
         - for (var i = 0; i < totalPage; i++) {
           - if (currentPage == (i + 1)) {
-              li.active
+              li.active(title="第"+(i+1)+"页")
                 span #{currentPage}
           - }
           - else {
-              li
+              li(title="第"+(i+1)+"页")
                 a(href='/results?#{query}&p=#{i}') #{i + 1}
           - }
         - }
+    script(src="js/daohang.js")

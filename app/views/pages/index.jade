@@ -1,70 +1,10 @@
 extends ../layout
 
 block content
-  link(href="/css/zzsc.css", rel="stylesheet", type="text/css") 
-  #tagscloud 
-    a.tagc1.close(href="http://sc.chinaz.com/") 方丈遗少大帅逼
-    |   
-    a.tagc2(href="http://sc.chinaz.com/") 这个网站太好了
-    |   
-    a.tagc5(href="http://sc.chinaz.com/") 爱死菱纱了
-    |   
-    a.tagc2(href="http://sc.chinaz.com/")
-      | 我要明绣女神
-      a
-        a.tagc2(href="http://sc.chinaz.com/") 那魔剑是我的
-        |   
-        a.tagc1(href="http://sc.chinaz.com/") 孤不会负你的
-        |   
-        a.tagc5(href="http://sc.chinaz.com/") 放学别走
-        |   
-        a.tagc5(href="http://sc.chinaz.com/") 谢大叔最酷
-        |   
-        a.tagc2(href="http://sc.chinaz.com/") 仙剑全是悲情啊
-        |   
-        a.tagc2(href="http://sc.chinaz.com/") 这货是杜三贱？
-        |   
-        a.tagc5(href="http://sc.chinaz.com/") 石铁大全国前三
-        |   
-        a.tagc2(href="http://sc.chinaz.com/") 我就一捡破烂的
-        |   
-        a.tagc1(href="http://sc.chinaz.com/") 雨后小故事
-        |   
-        a.tagc6(href="http://sc.chinaz.com/") 雨中小故事
-        |   
-        a.tagc5(href="http://sc.chinaz.com/") 雨前小故事
-        |   
-        a.tagc2(href="http://sc.chinaz.com/")
-          | 听朕的话
-          a
-            a.tagc2(href="http://sc.chinaz.com/") 把腿睁开，不对，把眼张开
-            |   
-            a.tagc1(href="http://sc.chinaz.com/") 你们好污，孤要干十个
-            |   
-            a.tagc2.close(href="http://sc.chinaz.com/") Node.js统一世界
-            |   
-            a.tagc5(href="http://sc.chinaz.com/") 这不是仙剑的网站吗？
-            |   
-            a.tagc2(href="http://sc.chinaz.com/") 杜三贱是傻逼
-            |   
-            a.tagc2(href="#") 傻逼说杜三贱是傻逼
-            a.tagc2(href="#") 只有点我能关闭这些评论，这群人都是骗子
-            |   
-            a.tagc5(href="http://sc.chinaz.com/") 杜三贱是谁？
-            a.tagc6(href="http://sc.chinaz.com/") 点我能关闭这可恶的言论   
-            a.tagc2(href="http://sc.chinaz.com/") 谁是杜三贱
-            a.tagc2(href="http://sc.chinaz.com/") 点我关闭这可恶的言论
-            a.tagc2(href="/index") 点我能返回顶部
-            a.tagc6(href="/index") 点击X关闭言论
-            a.tagc1(href="/index") 仙剑娱乐中有好听的音乐
-            a.tagc5(href="/index") 仙剑娱乐中有好玩的游戏
-  #close
-    span(title="君子美人信老衲乎？") ✔
-          script(src="/js/zzsc.js", type="text/javascript")
-  .container
+  .container 
     .row(style="margin-top: 100px;")
       each cat in categories
-        .panel.panel-default(style="margin-left:150px;")
+        .panel.panel-default
           .panel-heading
             h3
               a(href='/results?cat=#{cat._id}&p=0') #{cat.name}
@@ -80,5 +20,5 @@ block content
                         img(src="/upload/#{item.poster}", alt="#{item.title}")
                         .caption
                           h4 #{item.title}
-                          p: a.btn.btn-primary(href="/movie/#{item._id}", role="button") 人物介绍
-
+                          p: a.btn.btn-primary.rwjs(href="/movie/#{item._id}", role="button") 人物介绍
+                      script(src="js/daohang.js")
