@@ -1,148 +1,94 @@
-$(function() {
-  	$('#btn-submit').attr("disabled", "disabled");
-  	$('form :input').blur(function() {
-  		var $parent = $(this).parent().parent();
-  		$parent.find(".prompt-info").remove();
-      var $name = $('#username').val();
-      var $nickname = $('#nickname').val();
-  		// 验证用户名
-  		if(this.id === 'username') {
-  			if(this.value == "" || this.value.length < 5 || this.value.length > 11) {
-  				var erroMsg = '请输入5-11位的用户名!';
-  				$parent.append('<div class="col-sm-3 prompt-info error">' + erroMsg + '</div>');
-  			}else{
-  				var correctMsg = 'OK';
-  				$parent.append('<div class="col-sm-3 prompt-info correct"><span class="glyphicon glyphicon-ok">' + correctMsg + '</span></div>');
-  			}
-        // ajax PUT请求验证用户名是否存在
-        $.ajax({
-          type: 'PUT',
-          url: '/user/signup/name?name=' + $name
-        }).done(function(results) {
-          if(results.success === 1) {
-            $parent.find(".prompt-info").remove();
-            var erroMsg = '用户名已存在!';
-            $parent.append('<div class="col-sm-3 prompt-info error">' + erroMsg + '</div>');
-          }
-        });
-  		}
-  		// 验证密码是否符合规则
-  		if(this.id === 'password') {
-  			var value = $('#password').val();
-  			var num = 0;
-  			var number = 0;
-  			var upperCase = 0;
-  			var lowerCase = 0;
-  			if(value.search(/[0-9]/) != -1) {
-  				num += 1;
-  				number = 1;
-  			}
-  			if(value.search(/[A-Z]/) != -1) {
-  				num += 1;
-  				upperCase = 1;
-  			}
-  			if(value.search(/[a-z]/) != -1) {
-  				num += 1;
-  				lowerCase = 1;
-  			}
-  			if(num >= 2 && (value.length >= 6 && value.length <= 16)) {
-  				var correctMsg = 'OK';
-  				$parent.append('<div class="col-sm-3 prompt-info correct"><span class="glyphicon glyphicon-ok">' + correctMsg + '</span></div>');
-  			}else if(value.length < 6 || value.length > 16) {
-  				var erroMsg = '密码由6-16个字符组成!';
-  				$parent.append('<div class="col-sm-3 prompt-info error">' + erroMsg + '</div>');
-  			}else if(num == 1) {
-  				if(number == 1) {
-  				var erroMsg = '不能全为数字!';
-  				$parent.append('<div class="col-sm-3 prompt-info error">' + erroMsg + '</div>');
-  				}
-  				if(upperCase == 1 || lowerCase == 1) {
-  				var erroMsg = '不能全为字母!';
-  				$parent.append('<div class="col-sm-3 prompt-info error">' + erroMsg + '</div>');
-  				}
-  			}
-  		}
-  		// 验证确认密码和密码是否一致
-  		if(this.id == 'confirmPassword') {
-  			var password = $('#password').val();
-  			var confirmPassword = $('#confirmPassword').val();
-  			if(password != '' && password === confirmPassword) {
-  				var correctMsg = 'OK';
-  				$parent.append('<div class="col-sm-3 prompt-info correct"><span class="glyphicon glyphicon-ok">' + correctMsg + '</span></div>');
-  			}else{
-  				var erroMsg = '两次密码输入不一致!';
-  				$parent.append('<div class="col-sm-3 prompt-info error">' + erroMsg + '</div>');
-  			}
-  		}
-      // 验证昵称是否符合规则
-      if(this.id === 'nickname') {
-        if(this.value.length > 7) {
-          var erroMsg = '昵称过长！！！';
-          $parent.append('<div class="col-sm-3 prompt-info error">' + erroMsg + '</div>');
-        }else if(this.value == "") {
-          var erroMsg = '不能为空哦！';
-          $parent.append('<div class="col-sm-3 prompt-info error">' + erroMsg + '</div>');
-        }else{
-          var correctMsg = 'OK';
-          $parent.append('<div class="col-sm-3 prompt-info correct"><span class="glyphicon glyphicon-ok">' + correctMsg + '</span></div>');
-        }
-        // ajax PUT请求验证用户名是否存在
-        $.ajax({
-          type: 'PUT',
-          url: '/signup/nickname?nickname=' + $nickname
-        }).done(function(results) {
-          if(results.success === 1) {
-            $parent.find(".prompt-info").remove();
-            var erroMsg = '昵称已存在!';
-            $parent.append('<div class="col-sm-3 prompt-info error">' + erroMsg + '</div>');
-          }
-        });
-      }
-      // 验证年龄
-      if(this.id == 'age') {
-        if(this.value == ''){
-          var erroMsg = '不能是空岁哦！！';
-          $parent.append('<div class="col-sm-3 prompt-info error">' + erroMsg + '</div>');
-        }else if(this.value < 18) {
-          var erroMsg = '太小的乖乖还是好好读书吧！！';
-          $parent.append('<div class="col-sm-3 prompt-info error">' + erroMsg + '</div>');
-        }else if(this.value > 59) {
-          var erroMsg = '这么潮吗？老爷爷老奶奶？';
-          $parent.append('<div class="col-sm-3 prompt-info error">' + erroMsg + '</div>');
-        }else{
-          var correctMsg = 'OK';
-          $parent.append('<div class="col-sm-3 prompt-info correct"><span class="glyphicon glyphicon-ok">' + correctMsg + '</span></div>');
-        }
-      }
+window.onload = function(){
+            function $(id){ return document.getElementById(id);}
+            $("seepassword").onmouseout= function() {
+              //显示密码     
+                $("signupPassword").type="password";
+             
+             }
+            $("seepassword").onmouseover= function() {
+              //隐藏密码     
+                $("signupPassword").type="text";
+             
+             }
+            $("signupName").onblur = function(){   // 离开焦点判断
+                // alert($("txt").value);
+                 //alert(this.value);
+                 var s=0;
+                 $("submit").disabled = true;                    
+                for(var i=0;i<this.value.length;i++) {
+                
+                    if(isNaN(this.value.charAt(i)))
+                    {
+                      s=s+1;
+                    }
+                    var j=s;
+                }         
+                if(this.value == "")
+                {
+                    $("result").className ="wrong";
+                    $("result").innerHTML = "用户名不能为空";
+                }
+                else if(this.value.length<6||this.value.length>12)
+                {
+                    $("result").className = "wrong";
+                    $("result").innerHTML = "请输入6~12位用户名";
+                }
+                else if(!isNaN(this.value))  // 判断是不是全为数字
+                {
+                    $("result").className ="wrong";
+                    $("result").innerHTML = "用户名不能全为数字";
+                }
+                else if(j==this.value.length)  // 判断是不是全为字母
+                {
+                    $("result").className ="wrong";
+                    $("result").innerHTML = "用户名不能全为字母";
+                }                
+                else
+                {
+                    $("result").className ="right";
+                    $("result").innerHTML = "输入正确";
 
-      // 有错误信息禁用提交按钮
-    	var numError = $('form .error').length;
-        if(numError){
-          $('#btn-submit').attr("disabled", "disabled");
-        }else{
-        	$('#btn-submit').removeAttr("disabled", "disabled");
-        } 	
-  	});
-    
-    $('select').blur(function() {
-      var $parent = $(this).parent().parent();
-      $parent.find(".prompt-info").remove();
-
-      if(this.id == 'gender') {
-        var correctMsg = 'OK';
-        $parent.append('<div class="col-sm-3 prompt-info correct"><span class="glyphicon glyphicon-ok">' + correctMsg + '</span></div>');
-      }
-      if(this.id == 'constellation') {
-        var correctMsg = 'OK';
-        $parent.append('<div class="col-sm-3 prompt-info correct"><span class="glyphicon glyphicon-ok">' + correctMsg + '</span></div>');
-      }
-    });
-  	//重置按钮
-    $('#btn-reset').click(function(){
-      $('.prompt-info').remove();
-      var formGroups = $('.form-group');
-      for(var i = 0; i < 3;i++) {
-        $(formGroups[i]).append('<div class="col-sm-3 glyphicon glyphicon-asterisk prompt-info error"></div>');
-      }
-   });
-});
+                }
+            }
+ $("signupPassword").onblur = function(){   // 离开焦点判断
+                // alert($("txt").value);
+                 //alert(this.value);
+                $("submit").disabled = true;
+                var s=0;                    
+                for(var i=0;i<this.value.length;i++) {
+                if(isNaN(this.value.charAt(i)))
+                {
+                      s=s+1;
+                    }
+                 var j=s;
+                }         
+                if(this.value == "")
+                {
+                    $("result1").className ="wrong";
+                    $("result1").innerHTML = "密码不能为空";
+                }
+                else if(!isNaN(this.value))  // 判断不是数字
+                {
+                    $("result1").className ="wrong";
+                    $("result1").innerHTML = "密码不能全是数字";
+                    $("submit").disabled = true;
+                }
+                else if(j==this.value.length)  // 判断不是数字
+                {
+                    $("result1").className ="wrong";
+                    $("result1").innerHTML = "密码不能全是字母";
+                }
+                else if(this.value.length >12 || this.value.length<6)
+                {
+                    $("result1").className ="wrong";
+                    $("result1").innerHTML = "请输入6~12位密码";
+                }
+                else
+                {
+                    $("result1").className ="right";
+                    $("result1").innerHTML = "输入正确";
+                    $("submit").disabled = false;
+                }
+            }
+       
+        }

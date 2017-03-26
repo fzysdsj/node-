@@ -1,4 +1,4 @@
-extends ../layout
+extends ../layout_houtai
 
 block content
   .container
@@ -26,7 +26,23 @@ block content
         .form-group
           label.col-sm-2.control-label(for="inputTitle") 人物名称
           .col-sm-10
-            input#inputTitle.form-control(type="text", name="movie[title]", value=movie.title)
+            input#inputTitle.form-control(type="text", name="movie[title]", value=movie.title) 
+        .form-group
+          label.col-sm-2.control-label(for="inputTitle") 人物出处
+          .col-sm-10
+            input#inputTitle.form-control(type="text", name="movie[chuchu]", value=movie.chuchu)  
+        .form-group
+          label.col-sm-2.control-label(for="inputFlash") 昵称
+          .col-sm-10
+            input#inputFlash.form-control(type="text", name="movie[flash]", value=movie.flash)
+        .form-group
+          label.col-sm-2.control-label(for="inputLove") 喜欢的人
+          .col-sm-10
+            input#inputFlash.form-control(type="text", name="movie[love]", value=movie.love)
+        .form-group
+          label.col-sm-2.control-label(for="inputFriends") 朋友
+          .col-sm-10
+            input#inputFlash.form-control(type="text", name="movie[friends]", value=movie.friends)
         .form-group
           label.col-sm-2.control-label(for="inputDoctor") 人物定位
           .col-sm-10
@@ -48,10 +64,6 @@ block content
           .col-sm-10
             input#uploadPoster(type="file", name="uploadPoster")
         .form-group
-          label.col-sm-2.control-label(for="inputFlash") 人物宣传视频
-          .col-sm-10
-            input#inputFlash.form-control(type="text", name="movie[flash]", value=movie.flash)
-        .form-group
           label.col-sm-2.control-label(for="inputYear") 登场年龄
           .col-sm-10
             input#inputYear.form-control(type="text", name="movie[year]", value=movie.year)
@@ -61,5 +73,5 @@ block content
             textarea#inputSummary.form-control(type="text", name="movie[summary]")= movie.summary
         .form-group
           .col-sm-offset-2.col-sm-10
-          button.btn.btn-warning(type="submit") 录入
+          button.btn.btn-warning(type="submit",style="margin-bottom:100px;") 录入
   script(src='/build/admin.min.js')

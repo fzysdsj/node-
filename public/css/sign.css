@@ -1,9 +1,20 @@
 @charset "utf-8";
 *{margin:0;padding:0;list-style-type:none;}
 a,img{border:0;}
+a:hover{font-size:16px;}
 body{font:12px/180% Arial, Helvetica, sans-serif, "新宋体";background:#ccc;}
 .xiaogushi{margin-left: 20px;font-size: 15px;color:#000;}
 #xian4 {margin-left: 30px}
 #xian4 img{width:400px; height: 300px;}
+span#seepassword {/* color:#78A004; */ font-size:16px;font-weight: bold;cursor: pointer;}
+span#seepassword a { color:#78A004; }
+span#seepassword a:hover { color:red; }
+span#seename {/* color:#78A004; */ font-size:16px;font-weight: bold;cursor: pointer;}
+span#seename a { color:#78A004; }
+span#seename a:hover { color:red; }
 span {color:white;font: 26px/36px "楷体";}
-#sign img {width: 100px; height: 100px;}
+#sign img {width: 100px; height: 100px;} 
+span#result {display: inline-block;width: 200px;height: 20px;border: 1px solid #ccc;font-size:16px;line-height: 20px;text-align: left;padding-left: 20px;color:#999;}
+span#result1 {display: inline-block;width: 200px;height: 20px;border: 1px solid #ccc;font-size:16px;line-height: 20px;text-align: left;padding-left: 20px;color:#999;}
+.right {  /*正确的*/color: #5EFF5E;background:url(../img/right.png) no-repeat #DFFFDF 4px 3px;border: 1px solid #ACFFAC;}
+.wrong {  /*错误的*/background:url(../img/wrong.png) no-repeat #FFDCD0 4px 3px;border: 1px solid #FFAC91;color: #FF6B39;}

@@ -9,7 +9,10 @@ country: String,
 summary: String,
 flash: String,
 poster: String,
-year: Number,
+year: String,
+love: String,
+friends: String,
+chuchu: String,
 PV: {
 	type: Number,
 	default: 0

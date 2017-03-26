@@ -1,11 +1,4 @@
-.container
-      //- h1= title
-      //- .col-md-4
-      //-   small 仙剑人物录
-          div.music(style="position:absolute;top:-41px;right:-370px;")
-            object(width="340", height="86", data="http://music.163.com/style/swf/widget.swf?sid=4873827&type=2&auto=0&width=320&height=66", type="application/x-shockwave-flash")
-      //- link(rel="stylesheet", href="/css/bootstrap.min.css")
-      link(rel="stylesheet", type="text/css", href="/css/default.css")
+.container#back
       link(href="/css/offcanvas.min.css", rel="stylesheet", type="text/css")
       .overlay
 nav.navbar.navbar-inverse.navbar-static-top
@@ -47,15 +40,15 @@ nav.navbar.navbar-inverse.navbar-static-top
 .navbar.navbar-default.navbar-fixed-bottom
   .container 
       .navbar-brand 方丈阁 
-        #logo(style="width:120px;position:absolute;top:60px;left:0;")
-          a(href="/fangzhang")
-            img(src="/img/logo.png") 
       .navbar-brand#fzys 
         small 
+          img(src="img/fa.png" style="width:40px;height:40px;")
          a(href="#") 方丈遗少杜三贱
         small 
-         a(href="#") |新浪微博 
-         a(href="#") |知乎
+         a(href="https://fzysdsj.github.io/",title="https://fzysdsj.github.io/",target="_black") |Blog
+         a(href="https://github.com/fzysdsj",title="https://github.com/fzysdsj",target="_black") |Github
+         a(href="https://twitter.com/fzysdsj",title="https://twitter.com/fzysdsj",target="_black") |Twitter
+         a(href="#back") |回到顶部
    if user
       p.navbar-text.navbar-right
         span 欢迎您,#{user.name}

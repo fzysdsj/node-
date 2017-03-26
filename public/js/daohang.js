@@ -2,18 +2,21 @@
         function $(id) {return document.getElementById(id);}
         function client(){
         if(window.innerWidth !=null) {
+        	//IE9+和最新浏览器
           return {
           width: window.innerWidth,
           height: window.innerHeight
           }
         }
       else if(document.compatMode ==="CSS1Compat"){
+      	//判断是否是怪异浏览器
         return {
         width: document.documentElement.clientWidth,
         height: document.documentElement.clientHeight
         }
         }
         return {
+        //怪异浏览器
         width: document.body.clientWidth,
         height: documet.body.clientHeight
         }
@@ -37,10 +40,10 @@
        if(cwidth2<300) {
         $('search').style.width = "80px";
         }
-        if(cwidth2 >=450) {
+        if(cwidth2 >=590) {
         $('fzys').style.display = "block";
         } 
-        if(cwidth2 <450) {
+        if(cwidth2 <590) {
         $('fzys').style.display = "none";
         }          
         }
@@ -65,10 +68,10 @@
         if(cwidth<300) {
          $('search').style.width = "80px";
         }
-        if(cwidth >=450) {
+        if(cwidth >=590) {
         $('fzys').style.display = "block";
         }
-         if(cwidth <450) {
+         if(cwidth <590) {
         $('fzys').style.display = "none";
         }       
         }

@@ -14,13 +14,21 @@ block content
           .modal-body
             .form-group
               label(for="signupName") 用户名
-              input#signupName.form-control(name="user[name]", type="text") 
+              input#signupName.form-control(name="user[name]", placeholder="请输入6~12位用户名",type="text") 
+              span#seename 
+                a(href="/fangzhang",title="杜三贱没有那么强啦") 例：fzys123             
+              span#result 
             .form-group
               label(for="signupPassword") 密码
-              input#signupPassword.form-control(name="user[password]",placeholder="请输入密码", type="text") 
-          .modal-footer
+              input#signupPassword.form-control(name="user[password]",placeholder="请输入6~12位密码", type="password")  
+              span#seepassword
+               a(title="鼠标移到上面显示密码") 显示密码
+              span#result1
+          .modal-footer 
+            a(href="/index" style ="color:green;") 不注册，浏览网站|
+            a(href="/signin" style ="color:red;") 已有账号，直接登录          
             button.btn.btn-default(type="reset", data-dismiss="modal") 重置
-            button.btn.btn-success(type="submit") 提交 
+            button.btn.btn-success#submit(type="submit",disabled="true") 提交 
    .col-md-4  
      span#xian4
       img(src="img/b2.jpg") 
@@ -29,3 +37,4 @@ block content
      span.xiaogushi   B.越今朝 <br/>
      span.xiaogushi   C.赢旭危 <br/>
      span.xiaogushi   D.杜三贱 <br/>
+     script(src="/js/signup.js")

@@ -4,11 +4,12 @@ var User = require('../app/controllers/user');
 var Comment = require('../app/controllers/comment')
 var Category = require('../app/controllers/category')
 var Begin = require('../app/controllers/begin')
-var Gushi = require('../app/controllers/gushi')
-var Yule = require('../app/controllers/yule')
+var Daohang = require('../app/controllers/daohang')
+/*var Yule = require('../app/controllers/yule')
+var Error1 = require('../app/controllers/error')
 var Jingdian = require('../app/controllers/jingdian')
 var Liuyan = require('../app/controllers/liuyan')
-var Fangzhang = require('../app/controllers/fangzhang')
+var Fangzhang = require('../app/controllers/fangzhang')*/
 var multipart = require('connect-multiparty');
 var multipartMiddleware = multipart();
 var _ = require('underscore');
@@ -23,16 +24,18 @@ app.use((req,res,next)=>{
 //begin,开场动画
 app.get('/',Begin.begin)
 //gushi,仙剑廿载
-app.get('/gushi',Gushi.gushi)
+app.get('/gushi',Daohang.gushi)
 //yule.仙剑娱乐
-app.get('/yule',Yule.yule);
+app.get('/yule',Daohang.yule);
 //jingdian，仙剑经典
-app.get('/jingdian',Jingdian.jingdian)
+app.get('/jingdian',Daohang.jingdian)
 //liuyan，檀越留言
-app.get('/liuyan',Liuyan.liuyan)
-app.get('/fangzhang',Fangzhang.fangzhang)
+app.get('/liuyan',Daohang.liuyan)
+app.get('/fangzhang',Daohang.fangzhang)
 //index.page,主页
 app.get('/index',Index.index);
+//信息错误页
+app.get('/error',Daohang.error);
 //user，用户页。
 app.post('/user/signup',User.signup);
 app.post('/user/signin',User.signin);

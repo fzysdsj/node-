@@ -3,7 +3,7 @@ block content
   .container
     .row
       #pic.col-md-7
-        embed(src="/upload/#{movie.poster}",    allowFullScreen="true", quality="high", width="540", height="420", align="middle")
+        embed(src="/upload/#{movie.poster}",    allowFullScreen="true", quality="high", width="640", height="640", align="middle",title=movie.title)
         .panel.panel-defatul
           .panel-heading
             h3 评论区
@@ -38,13 +38,21 @@ block content
                 .form-group
                   textarea.form-control(name="comment[content]", row="3")
                 if user
-                  button.btn.btn-primary(type='submit') 提交
+                  button.btn.btn-primary(type='submit',style="display:inline-block;margin-bottom:100px;") 提交
                 else
-                  a.navbar-link(href="#", data-toggle="modal", data-target="#signinModal") 登录后评论
+                  a.navbar-link(href="#", data-toggle="modal", data-target="#signinModal",style="display:inline-block;margin-bottom:100px;") 登录后评论
       .col-md-5
         .dl-horizontal(style="margin-bottom:20%;")
           dt 姓名
           dd= movie.title
+          dt 昵称
+          dd= movie.flash
+          dt 出场
+          dd= movie.chuchu
+          dt 喜欢
+          dd= movie.love
+          dt 朋友
+          dd= movie.friends
           dt 定位
           dd= movie.doctor
           dt 阵营
@@ -57,3 +65,4 @@ block content
           dd= movie.summary
   script(src="/js/detail.js")
   script(src="/js/daohang.js")
+  link(href="/img/fa.ico", rel="shortcut icon")

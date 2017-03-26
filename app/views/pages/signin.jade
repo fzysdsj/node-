@@ -15,13 +15,21 @@ block content
           .modal-body
             .form-group
               label#demo(for="signinName") 用户名
-              input#signinName.form-control(name="user[name]", type="text")
+              input#signinName.form-control(name="user[name]", type="text",placeholder="请输入用户名") 
+              span#seename 
+               a(href="/fangzhang",title="好吧，杜三贱是挺强的") 例：fzys123    
+              span#result
             .form-group
               label(for="signinPassword") 密码
-              input#signinPassword.form-control(name="user[password]", type="password")
-          .modal-footer
+              input#signinPassword.form-control(name="user[password]", type="password",placeholder="请输入密码")
+              span#seepassword
+               a(title="鼠标移到上面显示密码") 显示密码
+              span#result1
+          .modal-footer 
+            a(href="/index" style ="color:green;") 不登陆，浏览网站|
+            a(href="/signup" style ="color:red;") 还没账号？来这注册  
             button.btn.btn-default(type="reset", data-dismiss="modal") 重置
-            button.btn.btn-success(type="submit") 提交
+            button.btn.btn-success#submit(type="submit",disabled="true") 提交
    .col-md-4  
      span#xian4
       img(src="img/b1.jpg") 
@@ -31,4 +39,5 @@ block content
      span.xiaogushi  C.不清楚 <br/>
      span.xiaogushi  D.杜三贱晓得<br/> 
 
-  script(src="js/daohang.js")
+  //- script(src="js/daohang.js")
+  script(src="/js/signin.js")

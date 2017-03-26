@@ -38,12 +38,15 @@ exports.showSignin = function(req,res){
 exports.signup = function(req,res,next) {
   var _user = req.body.user;
   User.findOne({name: _user.name},function(err,user) {
-    if(err||_user.name==null) {
+    if(err) {
       console.log("我是错误信息");
       console.log(err);
-      delete _user;
     }
-   
+   else if(_user.name===""){
+    console.log("我是错误信息");
+    delete user;
+    return res.redirect('/signup')
+   }
  else if(user) {
       return res.redirect('/signin')
     }
@@ -58,7 +61,7 @@ exports.signup = function(req,res,next) {
       console.log(err);
       console.log("你妈隔壁");
     }
-     return res.redirect('/index');
+     return res.redirect('/signin');
   });
     }
   
