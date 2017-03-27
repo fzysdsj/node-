@@ -40,10 +40,10 @@
        if(cwidth2<300) {
         $('search').style.width = "80px";
         }
-        if(cwidth2 >=590) {
+        if(cwidth2 >=650) {
         $('fzys').style.display = "block";
         } 
-        if(cwidth2 <590) {
+        if(cwidth2 <650) {
         $('fzys').style.display = "none";
         }          
         }
@@ -68,10 +68,10 @@
         if(cwidth<300) {
          $('search').style.width = "80px";
         }
-        if(cwidth >=590) {
+        if(cwidth >=650) {
         $('fzys').style.display = "block";
         }
-         if(cwidth <590) {
+         if(cwidth <650) {
         $('fzys').style.display = "none";
         }       
         }

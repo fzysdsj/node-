@@ -14,7 +14,7 @@ span#seename a { color:#78A004; }
 span#seename a:hover { color:red; }
 span {color:white;font: 26px/36px "楷体";}
 #sign img {width: 100px; height: 100px;} 
-span#result {display: inline-block;width: 200px;height: 20px;border: 1px solid #ccc;font-size:16px;line-height: 20px;text-align: left;padding-left: 20px;color:#999;}
-span#result1 {display: inline-block;width: 200px;height: 20px;border: 1px solid #ccc;font-size:16px;line-height: 20px;text-align: left;padding-left: 20px;color:#999;}
+span#result {display: inline-block;width: 200px;height: 20px;/* border: 1px solid #ccc; */font-size:16px;line-height: 20px;text-align: left;padding-left: 20px;color:#999;}
+span#result1 {display: inline-block;width: 200px;height: 20px;/* border: 1px solid #ccc; */font-size:16px;line-height: 20px;text-align: left;padding-left: 20px;color:#999;}
 .right {  /*正确的*/color: #5EFF5E;background:url(../img/right.png) no-repeat #DFFFDF 4px 3px;border: 1px solid #ACFFAC;}
 .wrong {  /*错误的*/background:url(../img/wrong.png) no-repeat #FFDCD0 4px 3px;border: 1px solid #FFAC91;color: #FF6B39;}

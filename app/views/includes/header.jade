@@ -39,15 +39,16 @@ nav.navbar.navbar-inverse.navbar-static-top
           script(src="/js/offcanvas.min.js")
 .navbar.navbar-default.navbar-fixed-bottom
   .container 
-      .navbar-brand 方丈阁 
+      .navbar-brand   方丈阁 
       .navbar-brand#fzys 
         small 
-          img(src="img/fa.png" style="width:40px;height:40px;")
+          //- img(src="img/fa.png" style="width:40px;height:40px;")
          a(href="#") 方丈遗少杜三贱
         small 
          a(href="https://fzysdsj.github.io/",title="https://fzysdsj.github.io/",target="_black") |Blog
          a(href="https://github.com/fzysdsj",title="https://github.com/fzysdsj",target="_black") |Github
          a(href="https://twitter.com/fzysdsj",title="https://twitter.com/fzysdsj",target="_black") |Twitter
+         a(href="http://mail.163.com/js6/main.jsp?sid=ECjzheUfgXPNQZVSpyffySzLEasIvfYZ&df=email163#module=welcome.WelcomeModule%7C%7B%7D",title="fzysdsj@163.com",target="_black") |Email
          a(href="#back") |回到顶部
    if user
       p.navbar-text.navbar-right
@@ -57,24 +58,24 @@ nav.navbar.navbar-inverse.navbar-static-top
 
     else
       p.navbar-text.navbar-right
-        a.navbar-link(href="#", data-toggle="modal", data-target="#signupModal") 注册
+        a.navbar-link(href="/signup",title="点击跳转到注册页面") 注册
         span &nbsp;|&nbsp;
         a.navbar-link(href="#", data-toggle="modal", data-target="#signinModal") 登录
-#signupModal.modal.fade
-  .modal-dialog
-    .modal-content
-      form(method="POST", action="/user/signup")
-        .modal-header 注册
-        .modal-body
-          .form-group
-            label(for="signupName") 用户名
-            input#signupName.form-control(name="user[name]", type="text")
-          .form-group
-            label(for="signupPassword") 密码
-            input#signupPassword.form-control(name="user[password]", type="password")
-        .modal-footer
-          button.btn.btn-default(type="button", data-dismiss="modal") 关闭
-          button.btn.btn-success(type="submit") 提交
+//- #signupModal.modal.fade
+//-   .modal-dialog
+//-     .modal-content
+//-       form(method="POST", action="/user/signup")
+//-         .modal-header 注册
+//-         .modal-body
+//-           .form-group
+//-             label(for="signupName") 用户名
+//-             input#signupName.form-control(name="user[name]", type="text")
+//-           .form-group
+//-             label(for="signupPassword") 密码
+//-             input#signupPassword.form-control(name="user[password]", type="password")
+//-         .modal-footer
+//-           button.btn.btn-default(type="button", data-dismiss="modal") 关闭
+//-           button.btn.btn-success(type="submit") 提交
 #signinModal.modal.fade
   .modal-dialog
     .modal-content
@@ -83,10 +84,10 @@ nav.navbar.navbar-inverse.navbar-static-top
         .modal-body
           .form-group
             label(for="signinName") 用户名
-            input#signinName.form-control(name="user[name]", type="text")
+            input#signinName.form-control(name="user[name]", type="text",placeholder="请输入6~12位用户名")
           .form-group
             label(for="signinPassword") 密码
-            input#signinPassword.form-control(name="user[password]", type="password")
+            input#signinPassword.form-control(name="user[password]", type="password",placeholder="请输入6~12位密码")
         .modal-footer
           button.btn.btn-default(type="button", data-dismiss="modal") 关闭
           button.btn.btn-success(type="submit") 提交

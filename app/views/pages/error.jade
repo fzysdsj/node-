@@ -1,5 +1,25 @@
-extends ../layout_houtai
-
+extends ../layout_sign
 block content
 	.container
-		col-md-8
+		link(href="/css/error.css",rel="stylesheet")
+		.page-header
+			.col-md-8
+				span.logo
+				p.error 信息错误页
+			.col-md-12(style="text-align:center;")		 
+				h1#back 方丈遗少：404
+			.col-md-12(style="text-align:center;") 
+				span  
+					a(href="/index") 返回首页|| 
+				span  
+					a(href="/signin") 返回登录页||
+				span  
+					a(href="/signup") 返回注册页
+			.col-md-5  
+				span#xian4
+			.col-md-5
+				span#word &nbsp;&nbsp;李逍遥，赵灵儿，林月如，韩菱纱，柳梦璃，龙溟，玄霄，谢沧行，暇，明绣等等等等，到底哪个是你最爱的仙剑人物呢？快来这里投票吧。
+					a(href="/yule") 点我去投票
+				span &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;_______方丈遗少杜三贱
+
+			script(src="/js/error.js")

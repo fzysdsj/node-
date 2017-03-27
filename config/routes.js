@@ -34,35 +34,44 @@ app.get('/liuyan',Daohang.liuyan)
 app.get('/fangzhang',Daohang.fangzhang)
 //index.page,主页
 app.get('/index',Index.index);
-//信息错误页
-app.get('/error',Daohang.error);
+//信息错误页，很不完美
+app.get('/error*',Daohang.error);
+app.get('/index/*',Daohang.error);
+app.get('/signin/*',Daohang.error);
+app.get('/signup/*',Daohang.error);
+app.get('/movie/:id/*',Daohang.error);
+app.get('/gushi/*',Daohang.error);
+app.get('/yule/*',Daohang.error);
+app.get('/fangzhang/*',Daohang.error);
+app.get('/liuyan/*',Daohang.error);
+app.get('/jingdian/*',Daohang.error);
 //user，用户页。
 app.post('/user/signup',User.signup);
 app.post('/user/signin',User.signin);
 app.get('/signin',User.showSignin);
 app.get('/signup',User.showSignup);
 app.get('/logout',User.logout);
-app.get('/admin/user/list', /*User.signinRequired, User.adminRequired,*/ User.list);
-app.delete('/admin/user/list',/*User.signinRequired, User.adminRequired,*/User.del);
-app.get('/admin/user/new', /*User.signinRequired, User.adminRequired,*/ User.new)
+app.get('/admin/user/list', User.signinRequired, User.adminRequired, User.list);
+app.delete('/admin/user/list',User.signinRequired, User.adminRequired,User.del);
+app.get('/admin/user/new', User.signinRequired, User.adminRequired, User.new)
 //movie
 app.get('/movie/:id',Movie.detail);
 /*app.get('/category/:id',category.detail);
 app.get('/user/:id',user.detail);*/
-app.get('/admin/movie/new',/*User.signinRequired, User.adminRequired,*/Movie.new);
-app.get('/admin/movie/update/:id',/*User.signinRequired, User.adminRequired,*/Movie.update);
-app.get('/admin/category/update/:id',/*User.signinRequired, User.adminRequired,*/Category.update);
-app.get('/admin/user/update/:id',/*User.signinRequired, User.adminRequired,*/User.update);
-app.post('/admin/user', /*User.signinRequired, User.adminRequired,*/ User.save)
+app.get('/admin/movie/new',User.signinRequired, User.adminRequired,Movie.new);
+app.get('/admin/movie/update/:id',User.signinRequired, User.adminRequired,Movie.update);
+app.get('/admin/category/update/:id',User.signinRequired, User.adminRequired,Category.update);
+app.get('/admin/user/update/:id',User.signinRequired, User.adminRequired,User.update);
+app.post('/admin/user', User.signinRequired, User.adminRequired, User.save)
 //有问题.
-app.post('/admin/movie',multipartMiddleware,Movie.savePoster,/*User.signinRequired, User.adminRequired,*/Movie.save);
-app.get('/admin/movie/list',/*User.signinRequired, User.adminRequired,*/Movie.list);
-app.delete('/admin/movie/list',/*User.signinRequired, User.adminRequired,*/Movie.del);
-app.post('/user/comment', /*User.signinRequired,*/ Comment.save);
-app.get('/admin/category/new', /*User.signinRequired, User.adminRequired,*/ Category.new)
-app.post('/admin/category', /*User.signinRequired, User.adminRequired,*/ Category.save)
-app.get('/admin/category/list', /*User.signinRequired, User.adminRequired,*/ Category.list)
-app.delete('/admin/category/list',/*User.signinRequired, User.adminRequired,*/Category.del);
+app.post('/admin/movie',multipartMiddleware,Movie.savePoster,User.signinRequired, User.adminRequired,Movie.save);
+app.get('/admin/movie/list',User.signinRequired, User.adminRequired,Movie.list);
+app.delete('/admin/movie/list',User.signinRequired, User.adminRequired,Movie.del);
+app.post('/user/comment', User.signinRequired, Comment.save);
+app.get('/admin/category/new', User.signinRequired, User.adminRequired, Category.new)
+app.post('/admin/category', User.signinRequired, User.adminRequired, Category.save)
+app.get('/admin/category/list', User.signinRequired, User.adminRequired, Category.list)
+app.delete('/admin/category/list',User.signinRequired, User.adminRequired,Category.del);
 //results，搜索结果页
 app.get('/results',Index.search);
 
