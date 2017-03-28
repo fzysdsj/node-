@@ -4,6 +4,13 @@ exports.error = function(req,res){
      
     })
 }
+exports.admin_error = function(req,res){
+    res.render('admin_error',{
+      title:'权限错误页'
+     
+    })
+}
+
 
 exports.fangzhang = function(req,res){
     res.render('fangzhang',{

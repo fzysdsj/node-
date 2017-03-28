@@ -1,0 +1,27 @@
+extends ../layout_sign
+block content
+	.container
+		link(href="/css/error.css",rel="stylesheet")
+		.page-header
+			.col-md-8
+				span.logo
+				p.error 权限出错页
+			.col-md-12(style="text-align:center;")		 
+				h1#back 方丈遗少：404
+			.col-md-12(style="text-align:center;") 
+				.role 您没有权限访问这个页面，请联系管理员或购买VIP权限<br/>
+				span
+					a(href="/index") 返回首页|| 
+				span  
+					a(href="/signin") 返回登录页||
+				span  
+					a(href="/signup") 返回注册页||
+				span  
+					a(href="/signup") 购买VIP
+			.col-md-5  
+				span#fzj
+			.col-md-5
+				span#jieshao &nbsp;&nbsp;"杜菖兰"为方丈阁主杜三贱的长篇小说《方丈记》中的第一女主角，她出身大炎皇族，容貌秀美，性格温柔刚强，在定正一中邂逅男主何龙溪，并与他相爱相恨，经历了一段异常艰难的历程后，终于得偿所愿，双双归隐五龙岭，而当她以为一切都将归于平淡的时候，那贯穿始终的巨大阴谋也终于慢慢浮出了水面......<a href="/fangzhang">阅读更多</a>
+				span &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;_______方丈遗少杜三贱
+
+			script(src="/js/error.js")

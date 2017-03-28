@@ -34,6 +34,8 @@ app.get('/liuyan',Daohang.liuyan)
 app.get('/fangzhang',Daohang.fangzhang)
 //index.page,主页
 app.get('/index',Index.index);
+//权限错误页
+app.get('/admin_error',Daohang.admin_error);
 //信息错误页，很不完美
 app.get('/error*',Daohang.error);
 app.get('/index/*',Daohang.error);

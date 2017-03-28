@@ -3,3 +3,5 @@ body {background:#ccc;font:16px/26px "楷体";}
 #xian4 {display:inline-block;width:400px; height: 284px;background:url("../img/family.jpg");background-size: 100%;margin-top: 100px;}
 #word {display:inline-block;margin-top: 100px;margin-left:20px;color:rgba(245,1,123,1);font-size:20px;font-weight: bold; }
 .error {display:inline-block;font-size:22px;color: #fff;}
+#fzj {display:inline-block;width:400px; height: 390px;background:url("../img/25.png")no-repeat center center;background-size: 100%;margin-top: 100px;}
+#jieshao {display:inline-block;margin-top: 100px;margin-left:20px;color:rgba(245,60,60,1);font-size:16px;font-weight: bold; }
